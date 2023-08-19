@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { Label, Button } from './Form.styled';
 
 const idName = nanoid;
-// const idNum = nanoid;
+const idNum = nanoid;
 
 export const ContactForm = ({ onAddContact }) => {
   return (
@@ -30,6 +30,18 @@ export const ContactForm = ({ onAddContact }) => {
               // pattern="\+?\d{1,4}?[ .\-\s]?\(?\d{1,3}?\)?[ .\-\\s]?\d{1,4}[ .\-\s]?\d{1,4}[ .\-\s]?\d{1,9}"
               title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
               required
+            />
+          </Label>
+          <Label>
+            Number
+            <Field
+              id={idNum}
+              type="tel"
+              name="number"
+              pattern="\+?\d{1,4}?[ .\-\s]?\(?\d{1,3}?\)?[ .\-\\s]?\d{1,4}[ .\-\s]?\d{1,4}[ .\-\s]?\d{1,9}"
+              title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
+              required
+              placeholder="0XX-123-45-67"
             />
           </Label>
 

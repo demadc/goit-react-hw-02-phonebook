@@ -39,12 +39,14 @@
 
 import { Component } from 'react';
 import { ContactForm } from './Form/Form';
+import { ContactsList } from './ContactList/ContactsList';
 // import { Title } from './Title/Title';
 
 export class App extends Component {
   state = {
     contacts: [],
     name: '',
+    number: '',
   };
 
   handleAddContact = newContact => {
@@ -64,11 +66,18 @@ export class App extends Component {
   };
 
   render() {
+    const { contacts } = this.state;
+    const ItemContacts = contacts.filter(contact =>
+      contact.name.toLowerCase().includes(this.state.filter)
+    );
+
     return (
       <div style={{ width: 500, marginLeft: 400, marginRight: 400 }}>
         {/* <Title title="Phonebook" /> */}
         <h2>Phonebook</h2>
         <ContactForm onAddContact={this.handleAddContact} />
+        <h2>Contacts</h2>
+        <ContactsList contacts={ItemContacts} />
       </div>
     );
   }
