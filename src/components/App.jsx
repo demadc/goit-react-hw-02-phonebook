@@ -1,47 +1,7 @@
-// 2 - Книга контактів
-
-// Напиши застосунок зберігання контактів телефонної книги.
-
-// Крок 1
-
-// Застосунок повинен складатися з форми і списку контактів.
-// На поточному кроці реалізуй додавання імені контакту та відображення списку
-// контактів.Застосунок не повинен зберігати контакти між різними
-// сесіями(оновлення сторінки).
-
-// Використовуйте цю розмітку інпуту з вбудованою валідацією для
-// імені контакту.
-
-// <input
-//   type="text"
-//   name="name"
-//   pattern="^[a-zA-Zа-яА-Я]+(([' \-][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-//   pattern="\+?\d{1,4}?[ .\-\s]?\(?\d{1,3}?\)?[ .\-\\s]?\d{1,4}[ .\-\s]?\d{1,4}[ .\-\s]?\d{1,9}"
-//   title="Name may contain only letters, apostrophe, dash and spaces.
-// For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
-//   required
-// />
-
-// Стан, що зберігається в батьківському компоненті <App>, обов'язково
-// повинен бути наступного вигляду, додавати нові властивості не можна.
-
-// state = {
-//   contacts: [],
-//   name: ''
-// }
-
-// Кожен контакт повинен бути об'єктом з властивостями name та id.
-// Для генерації ідентифікаторів використовуй будь - який відповідний пакет,
-//   наприклад nanoid.Після завершення цього кроку, застосунок повинен виглядати
-//    приблизно так.
-
-// component preview
-
 import { Component } from 'react';
 import { ContactForm } from './Form/Form';
 import { ContactsList } from './ContactList/ContactsList';
 import { Filter } from './Filter/Filter';
-// import { Title } from './Title/Title';
 
 export class App extends Component {
   state = {
@@ -52,8 +12,6 @@ export class App extends Component {
       { id: 'id-4', name: 'Annie Copeland', number: '227-91-26' },
     ],
     filter: '',
-    name: '',
-    number: '',
   };
 
   handleAddContact = newContact => {
@@ -86,7 +44,7 @@ export class App extends Component {
 
   render() {
     const { contacts } = this.state;
-    const ItemContacts = contacts.filter(contact =>
+    const itemContacts = contacts.filter(contact =>
       contact.name.toLowerCase().includes(this.state.filter)
     );
 
