@@ -1,14 +1,14 @@
 import React from 'react';
 import {} from './Filter.styled';
 import { Label, Field } from './Filter.styled';
-import { nanoid } from 'nanoid';
+// import { nanoid } from 'nanoid';
 import PropTypes from 'prop-types';
 
 export const Filter = ({ value, onFilter }) => {
   return (
-    <Label htmlFor={idFilter}>
+    <Label>
       Find contacts by name
-      <Field id={idFilter()} type="text" value={value} onChange={onFilter} />
+      <Field type="text" value={value} onChange={onFilter} />
     </Label>
   );
 };
