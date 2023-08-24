@@ -1,7 +1,5 @@
 import React from 'react';
-import {} from './Filter.styled';
 import { Label, Field } from './Filter.styled';
-// import { nanoid } from 'nanoid';
 import PropTypes from 'prop-types';
 
 export const Filter = ({ value, onFilter }) => {
