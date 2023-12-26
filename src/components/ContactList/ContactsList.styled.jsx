@@ -1,28 +1,62 @@
 import styled from 'styled-components';
 
 export const List = styled.ul`
-  display: block;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-top: ${p => p.theme.space[3]}px;
+  padding-bottom: ${p => p.theme.space[3]}px;
+  padding-left: ${p => p.theme.space[4]}px;
+  padding-right: ${p => p.theme.space[4]}px;
+
+  max-width: 100%;
+  width: 300px;
 `;
 
 export const ListItem = styled.li`
   display: flex;
-  justify-content: left;
+  justify-content: space-between;
   align-items: center;
-  gap: 10px;
+  gap: 16px;
+
+  color: ${p => p.theme.colors.accent};
+  text-shadow: ${props => props.theme.shadows.textShadow};
+  font-size: ${props => props.theme.fontSizes.s};
 `;
 
 export const ItemText = styled.p``;
 
 export const Btn = styled.button`
-  width: 70px;
-  padding: 5px;
+  padding-top: ${p => p.theme.space[2]}px;
+  padding-bottom: ${p => p.theme.space[2]}px;
+  padding-left: ${p => p.theme.space[3]}px;
+  padding-right: ${p => p.theme.space[3]}px;
 
-  font-weight: 600;
-  font-size: 10px;
-  color: rgb(30, 29, 29);
-
-  background-color: rgb(250, 247, 247);
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
-  border-radius: 3px;
   border: none;
+  outline: none;
+  border-radius: 8px;
+
+  color: ${p => p.theme.colors.white};
+  background-color: ${p => p.theme.colors.muted};
+  box-shadow: ${p => p.theme.shadows.boxShadow};
+  transition: all 0.2s ease-in-out;
+
+  :hover,
+  :focus {
+    background-color: ${p => p.theme.colors.secondary};
+    color: ${p => p.theme.colors.accent};
+    box-shadow: -2px -2px 5px #fff, 2px 2px 5px #8ba793;
+    svg {
+      fill: ${p => p.theme.colors.accent};
+      stroke: ${p => p.theme.colors.accent};
+    }
+  }
+  :active {
+    color: ${p => p.theme.colors.accent};
+    box-shadow: inset 1px 1px 2px #8ba793, inset -1px -1px 2px #fff;
+    svg {
+      fill: ${p => p.theme.colors.accent};
+      stroke: ${p => p.theme.colors.accent};
+    }
+  }
 `;

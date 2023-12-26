@@ -3,22 +3,30 @@ import styled from 'styled-components';
 export const Label = styled.label`
   display: flex;
   flex-direction: column;
-  justify-content: center;
   gap: 8px;
 
-  width: 170px;
-  margin-bottom: 16px;
-
-  color: 000;
-  font-weight: 300;
-  font-size: 16px;
+  color: ${props => props.theme.colors.accent};
+  text-shadow: ${props => props.theme.shadows.textShadow};
 `;
 
 export const Field = styled.input`
-  padding: 5px;
+  padding-top: ${p => p.theme.space[3]}px;
+  padding-bottom: ${p => p.theme.space[3]}px;
+  padding-left: ${p => p.theme.space[4]}px;
+  padding-right: ${p => p.theme.space[4]}px;
 
-  font-size: 12px;
+  max-width: 100%;
+  width: 300px;
 
-  border: 1px solid rgba(33, 33, 33, 0.2);
-  border-radius: 4px;
+  border: 0;
+  outline: 0;
+  border-radius: 8px;
+  color: ${props => props.theme.colors.accent};
+  background-color: ${props => props.theme.colors.primary};
+  box-shadow: inset 1px 1px 3px #8ba793, inset -1px -1px 5px #fff;
+
+  font-style: italic;
+
+  text-shadow: ${props => props.theme.shadows.textShadow};
+  font-size: ${props => props.theme.fontSizes.s};
 `;
