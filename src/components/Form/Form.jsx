@@ -1,7 +1,9 @@
 import { Formik, Field, Form } from 'formik';
 import { nanoid } from 'nanoid/non-secure';
 import PropTypes from 'prop-types';
-import { Label, Button } from './Form.styled';
+import { Label, LableWrapper, Button } from './Form.styled';
+import { HiUserAdd } from 'react-icons/hi';
+import { BsFillTelephoneFill, BsPersonFill } from 'react-icons/bs';
 
 const idName = nanoid;
 const idNum = nanoid;
@@ -21,19 +23,27 @@ export const ContactForm = ({ onAddContact }) => {
       >
         <Form>
           <Label htmlFor={idName}>
-            Name
+            <LableWrapper>
+              <BsPersonFill size="16" />
+              Name
+            </LableWrapper>
+
             <Field
               id={idName}
               type="text"
               name="name"
               pattern="^[a-zA-Zа-яА-Я]+(([' \-][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-              // pattern="\+?\d{1,4}?[ .\-\s]?\(?\d{1,3}?\)?[ .\-\\s]?\d{1,4}[ .\-\s]?\d{1,4}[ .\-\s]?\d{1,9}"
+              placeholder="Migelito"
               title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
               required
             />
           </Label>
           <Label>
-            Number
+            <LableWrapper>
+              <BsFillTelephoneFill size="16" />
+              Number
+            </LableWrapper>
+
             <Field
               id={idNum}
               type="tel"
@@ -45,7 +55,10 @@ export const ContactForm = ({ onAddContact }) => {
             />
           </Label>
 
-          <Button type="submit">Add contact</Button>
+          <Button type="submit">
+            <HiUserAdd size="16" />
+            Add contact
+          </Button>
         </Form>
       </Formik>
     </>

@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const MainHeader = styled.h1`
+  margin-top: ${props => props.theme.space[4]}px;
   margin-bottom: ${props => props.theme.space[4]}px;
   text-align: center;
   color: ${props => props.theme.colors.accent};

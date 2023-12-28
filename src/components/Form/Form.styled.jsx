@@ -1,10 +1,12 @@
 import styled from 'styled-components';
+import { Form as FormikForm } from 'formik';
 
-export const Form = styled.form`
+export const Form = styled(FormikForm)`
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 12px;
+
   margin-bottom: ${props => props.theme.space[4]}px;
   padding: ${props => props.theme.space[3]}px;
 
@@ -15,34 +17,32 @@ export const Form = styled.form`
 export const Label = styled.label`
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  gap: 12px;
-
-  width: 170px;
-  margin-bottom: 32px;
-
-  color: ${props => props.theme.colors.accent};
-  font-weight: 400;
-  font-size: 16px;
-`;
-
-export const Field = styled.input`
-  display: flex;
-  flex-direction: column;
   gap: 8px;
 
   max-width: 100%;
-  width: 500px;
+  width: 300px;
 
   color: ${props => props.theme.colors.accent};
   text-shadow: ${props => props.theme.shadows.textShadow};
+
+  padding-top: ${p => p.theme.space[3]}px;
+  padding-bottom: ${p => p.theme.space[3]}px;
+  padding-left: ${p => p.theme.space[4]}px;
+  padding-right: ${p => p.theme.space[4]}px;
+`;
+
+export const LableWrapper = styled.div`
+  display: flex;
+  gap: 8px;
+  margin-left: 8px;
 `;
 
 export const Button = styled.button`
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: center;
   gap: ${p => p.theme.space[2]}px;
+  margin: 0 auto;
 
   padding-top: ${p => p.theme.space[3]}px;
   padding-bottom: ${p => p.theme.space[3]}px;
