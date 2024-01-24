@@ -2,15 +2,15 @@ import React from 'react';
 import { Label, Field } from './Filter.styled';
 import PropTypes from 'prop-types';
 import { MdPersonSearch } from 'react-icons/md';
-import { LableWrapper } from 'components/Form/Form.styled';
+import { LabelWrapper } from 'components/Form/Form.styled';
 
 export const Filter = ({ value, onFilter }) => {
   return (
     <Label>
-      <LableWrapper>
+      <LabelWrapper>
         <MdPersonSearch size="24" />
         Find contacts by name
-      </LableWrapper>
+      </LabelWrapper>
 
       <Field
         type="text"

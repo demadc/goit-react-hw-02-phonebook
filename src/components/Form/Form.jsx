@@ -1,7 +1,7 @@
 import { Formik, Field, Form } from 'formik';
 import { nanoid } from 'nanoid/non-secure';
 import PropTypes from 'prop-types';
-import { Label, LableWrapper, Button } from './Form.styled';
+import { Label, LabelWrapper, Button } from './Form.styled';
 import { HiUserAdd } from 'react-icons/hi';
 import { BsFillTelephoneFill, BsPersonFill } from 'react-icons/bs';
 
@@ -23,10 +23,10 @@ export const ContactForm = ({ onAddContact }) => {
       >
         <Form>
           <Label htmlFor={idName}>
-            <LableWrapper>
+            <LabelWrapper>
               <BsPersonFill size="16" />
               Name
-            </LableWrapper>
+            </LabelWrapper>
 
             <Field
               id={idName}
@@ -39,10 +39,10 @@ export const ContactForm = ({ onAddContact }) => {
             />
           </Label>
           <Label>
-            <LableWrapper>
+            <LabelWrapper>
               <BsFillTelephoneFill size="16" />
               Number
-            </LableWrapper>
+            </LabelWrapper>
 
             <Field
               id={idNum}

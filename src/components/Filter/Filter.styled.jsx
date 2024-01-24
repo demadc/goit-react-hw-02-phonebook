@@ -9,7 +9,7 @@ export const Label = styled.label`
   text-shadow: ${props => props.theme.shadows.textShadow};
 `;
 
-// export const LableWrapper = styled.div``;
+// export const LabelWrapper = styled.div``;
 
 export const Field = styled.input`
   padding-top: ${p => p.theme.space[3]}px;

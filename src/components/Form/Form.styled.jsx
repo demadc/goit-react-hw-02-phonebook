@@ -31,7 +31,7 @@ export const Label = styled.label`
   padding-right: ${p => p.theme.space[4]}px;
 `;
 
-export const LableWrapper = styled.div`
+export const LabelWrapper = styled.div`
   display: flex;
   gap: 8px;
   margin-left: 8px;
